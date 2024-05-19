@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sensor Data</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: auto;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      "
+    >
+      Database
+    </h1>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Sensor Value 1</th>
+            <th>Sensor Value 2</th>
+            <th>Spoint</th>
+            <th>timestamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let data of sensorData) { %>
+          <tr>
+            <td><%= data.id %></td>
+            <td><%= data.sensor_value_1 %></td>
+            <td><%= data.sensor_value_2 %></td>
+            <td><%= data.spoint %></td>
+            <td><%= data.timestamp %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
